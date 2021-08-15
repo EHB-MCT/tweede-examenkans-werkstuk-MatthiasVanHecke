@@ -1,10 +1,5 @@
 "use strict";
 
-/*fetch('https://thecrew.cc/news/read.php')
-    .then(response => response.json())
-    .then(data => console.log(data));*/
-
-
 const getArticles = {
     initFields() {
         console.log('init');
@@ -17,15 +12,15 @@ const getArticles = {
     },
     async getArticles(news) {
         fetch(`https://thecrew.cc/news/read.php`)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            let htmlString = `
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                let htmlString = `
             <h2>article</h2> `;
-            document.getElementById('container').innerHTML = htmlString;
-        });
+                document.getElementById('container').innerHTML = htmlString;
+            });
     }
 };
 
